@@ -3,44 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hex.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wiljimen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 11:08:06 by wiljimen          #+#    #+#             */
-/*   Updated: 2023/12/05 11:08:06 by wiljimen         ###   ########.fr       */
+/*   Created: 2023/12/05 16:02:38 by wiljimen          #+#    #+#             */
+/*   Updated: 2023/12/05 16:02:53 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_hexa(unsigned int nx)
+void	ft_hexa_lower(unsigned int numx)
 {
-	if (nx >= 16)
+	if (numx >= 16)
 	{
-		ft_hexa(nx / 16);
-		ft_hexa(nx % 16);
+		ft_hex(numx / 16);
+		ft_hex(numx % 16);
 	}
 	else
 	{
-		if (nx < 10)
-			ft_putchar(nx + 48);
+		if (numx < 10)
+			ft_putchar(numx + 48);
 		else
-			ft_putchar(nx - 10 + 'a');
+			ft_putchar(numx - 10 + 'a');
 	}
 }
 
-void	ft_heXa(unsigned int nX)
+void	ft_hexa_upper(unsigned int numbX)
 {
-	if (nX >= 16)
+	if (numbX >= 16)
 	{
-		ft_heXa(nX / 16);
-		ft_heXa(nX % 16);
+		ft_Hexa(numbX / 16);
+		ft_Hexa(numbX % 16);
 	}
 	else
 	{
-		if (nX < 10)
-			ft_putchar(nX + 48);
+		if (numbX < 10)
+			ft_putchar(numbX + 48);
 		else
-			ft_putchar(nX - 10 + 'A');
+			ft_putchar(numbX - 10 + 'A');
 	}
 }
 /*
@@ -50,10 +50,10 @@ int	main(void)
 {
 	unsigned int n = 123456;;
 
-	ft_hexa(n);
+	ft_hex(n);
 	ft_putchar('\n');
 	printf("%x\n\n", n);
-	ft_heXa(n);
+	ft_Hexa(n);
 	ft_putchar('\n');
 	printf("%X\n", n);
 

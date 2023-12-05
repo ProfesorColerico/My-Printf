@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_character.c                                     :+:      :+:    :+:   */
+/*   ft_char_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wiljimen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 10:50:38 by wiljimen          #+#    #+#             */
-/*   Updated: 2023/12/05 10:50:38 by wiljimen         ###   ########.fr       */
+/*   Created: 2023/12/05 18:19:36 by wiljimen          #+#    #+#             */
+/*   Updated: 2023/12/05 18:19:37 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-	while(*str)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		ft_putchar(*str);
-		str++;
+		write(1, &str[i], 1);
+		i++;
 	}
+	return (i);
 }
 /*
 #include <stdio.h>

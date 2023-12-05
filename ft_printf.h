@@ -6,21 +6,24 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:04:26 by wiljimen          #+#    #+#             */
-/*   Updated: 2023/12/05 11:04:26 by wiljimen         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:24:05 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdlib.h>
 
-void	ft_putnbr(int nb);
-void	ft_put_unsign_nbr(unsigned int nb);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_hexa(unsigned int nx);
-void	ft_heXa(unsigned int nX);
+int		ft_putnbr(int nb);
+int		ft_putunbr(unsigned int nb);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+void	ft_hexa_lower(unsigned int numx);
+void	ft_hexa_upper(unsigned int numbX);
+int		ft_ptr_aux(unsigned long nptr);
+int		ft_put_ptr(int *ptr);
 
 #endif

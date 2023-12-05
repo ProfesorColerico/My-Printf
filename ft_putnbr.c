@@ -3,63 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wiljimen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 10:57:26 by wiljimen          #+#    #+#             */
-/*   Updated: 2023/12/05 10:57:26 by wiljimen         ###   ########.fr       */
+/*   Created: 2023/12/05 18:19:43 by wiljimen          #+#    #+#             */
+/*   Updated: 2023/12/05 18:19:44 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(int nb)
 {
+	int i;
+
+	i = 0;
 	if (nb == -2147483648)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
+		i += write(1, "-2", 2);
 		ft_putnbr(147483648);
 	}
 	else if (nb < 0)
 	{
-		ft_putchar('-');
+		i += write(1, "-", 1);
 		nb = -nb;
 		ft_putnbr(nb);
 	}
 	else if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		i += ft_putnbr(nb / 10);
+		i += ft_putnbr(nb % 10);
 	}
 	else
-		ft_putchar(nb + 48);
+	{
+		i += ft_putchar(nb + 48);
+	}
+	return (i);
 }
 
-void	ft_put_unsign_nbr(unsigned int nb)
+int	ft_putunbr(unsigned int nb)
 {
+	int i;
+
+	i = 0;
 	if (nb > 9)
 	{
-		ft_put_unsign_nbr(nb / 10);
-		ft_put_unsign_nbr(nb % 10);
+		i += ft_putunbr(nb / 10);
+		i += ft_putunbr(nb % 10);
 	}
 	else
-		ft_putchar(nb + 48);
+		i += ft_putchar(nb + 48);
+	return (i);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
-{
-	int n;
-	unsigned int num;
-
-	n = -7;
-	num = 7;
-	ft_putnbr(n);
-	printf("\n");
-	printf("%d\n", n);
-	ft_put_unsign_nbr(num);
-	printf("\n%u\n", num);
-
-	return (0);
+{	
+	int n = 200;
+	
+	printf("\n%d", ft_putnbr(n));
 }*/

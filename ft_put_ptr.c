@@ -29,13 +29,13 @@ void	ft_ptr_aux(unsigned long nptr)
 	}
 }
 
-int	ft_put_ptr(unsigned long *ptr)
+void	ft_put_ptr(int *ptr)
 {
 	ft_putchar('0');
 	ft_putchar('x');
 	ft_ptr_aux((unsigned long)ptr);
 }
-
+/*
 int	main(void)
 {
 	int n;
@@ -43,7 +43,7 @@ int	main(void)
 
 	n = 123456;
 	ptr = &n;
-	ft_put_ptr((long unsigned int)ptr);
+	ft_put_ptr(ptr);
 	printf("\n");
 	printf("%p", ptr);
-}
+}*/

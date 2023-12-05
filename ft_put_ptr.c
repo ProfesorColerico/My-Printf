@@ -13,11 +13,27 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-void	ft_put_ptr(int ptr)
+void	ft_ptr_aux(unsigned long nptr)
+{
+	if (nptr >= 16)
+	{
+		ft_ptr_aux(nptr / 16);
+		ft_ptr_aux(nptr % 16);
+	}
+	else
+	{
+		if (nptr < 10)
+			ft_putchar(nptr + 48);
+		else
+			ft_putchar(nptr - 10 + 'a');
+	}
+}
+
+int	ft_put_ptr(unsigned long *ptr)
 {
 	ft_putchar('0');
 	ft_putchar('x');
-	ft_hexa(ptr);
+	ft_ptr_aux((unsigned long)ptr);
 }
 
 int	main(void)
@@ -27,7 +43,7 @@ int	main(void)
 
 	n = 123456;
 	ptr = &n;
-	ft_put_ptr((void *)ptr);
+	ft_put_ptr((long unsigned int)ptr);
 	printf("\n");
 	printf("%p", ptr);
 }

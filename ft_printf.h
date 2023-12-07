@@ -24,5 +24,7 @@ int	ft_hexa_lower(unsigned int numx);
 int	ft_hexa_upper(unsigned int numbX);
 int	ft_ptr_aux(unsigned long nptr);
 int	ft_put_ptr(int *ptr);
+int	ft_printf_counter(va_list args, const char type);
+int	ft_printf(const char *str, ...);
 
 #endif

@@ -42,7 +42,7 @@ int	ft_put_ptr(int *ptr)
 	i += ft_ptr_aux((unsigned long)ptr);
 	return (i);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
@@ -55,4 +55,4 @@ int	main(void)
 	ft_put_ptr(ptr);
 	printf("\n");
 	printf("%p", ptr);
-}*/
+}

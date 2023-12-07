@@ -11,37 +11,46 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-void	ft_hexa_lower(unsigned int numx)
+int	ft_hexa_lower(unsigned int numx)
 {
+	int	i;
+
+	i = 0;
 	if (numx >= 16)
 	{
-		ft_hex(numx / 16);
-		ft_hex(numx % 16);
+		i += ft_hexa_lower(numx / 16);
+		i += ft_hexa_lower(numx % 16);
 	}
 	else
 	{
 		if (numx < 10)
-			ft_putchar(numx + 48);
+			i += ft_putchar(numx + 48);
 		else
-			ft_putchar(numx - 10 + 'a');
+			i += ft_putchar(numx - 10 + 'a');
 	}
+	return (i);
 }
 
-void	ft_hexa_upper(unsigned int numbX)
+int	ft_hexa_upper(unsigned int numbX)
 {
+	int i;
+
+	i = 0;
 	if (numbX >= 16)
 	{
-		ft_Hexa(numbX / 16);
-		ft_Hexa(numbX % 16);
+		i += ft_hexa_upper(numbX / 16);
+		i += ft_hexa_upper(numbX % 16);
 	}
 	else
 	{
 		if (numbX < 10)
-			ft_putchar(numbX + 48);
+			i += ft_putchar(numbX + 48);
 		else
-			ft_putchar(numbX - 10 + 'A');
+			i += ft_putchar(numbX - 10 + 'A');
 	}
+	return (i);
 }
 /*
 #include <stdio.h>
@@ -50,10 +59,10 @@ int	main(void)
 {
 	unsigned int n = 123456;;
 
-	ft_hex(n);
+	ft_hexa_lower(n);
 	ft_putchar('\n');
 	printf("%x\n\n", n);
-	ft_Hexa(n);
+	ft_hexa_upper(n);
 	ft_putchar('\n');
 	printf("%X\n", n);
 

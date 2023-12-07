@@ -15,15 +15,14 @@
 
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdlib.h>
 
-int		ft_putnbr(int nb);
-int		ft_putunbr(unsigned int nb);
-int		ft_putchar(char c);
-int		ft_putstr(char *str);
-void	ft_hexa_lower(unsigned int numx);
-void	ft_hexa_upper(unsigned int numbX);
-int		ft_ptr_aux(unsigned long nptr);
-int		ft_put_ptr(int *ptr);
+int	ft_putnbr(int nb);
+int	ft_putunbr(unsigned int nb);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_hexa_lower(unsigned int numx);
+int	ft_hexa_upper(unsigned int numbX);
+int	ft_ptr_aux(unsigned long nptr);
+int	ft_put_ptr(int *ptr);
 
 #endif

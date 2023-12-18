@@ -8,6 +8,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_char_str.c \
 		ft_hex.c	\
+		ft_put_ptr.c \
 		ft_printf.c	\
 		ft_putnbr.c	\
 

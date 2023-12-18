@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:04:26 by wiljimen          #+#    #+#             */
-/*   Updated: 2023/12/05 18:24:05 by wiljimen         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:59:55 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
 
 int	ft_putnbr(int nb);
 int	ft_putunbr(unsigned int nb);

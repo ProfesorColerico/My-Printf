@@ -6,7 +6,7 @@
 /*   By: wiljimen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:02:38 by wiljimen          #+#    #+#             */
-/*   Updated: 2023/12/05 16:02:53 by wiljimen         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:59:27 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_hexa_lower(unsigned int numx)
 
 int	ft_hexa_upper(unsigned int numbX)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (numbX >= 16)

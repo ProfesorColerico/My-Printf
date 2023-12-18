@@ -6,7 +6,7 @@
 /*   By: wiljimen <wiljimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:23:07 by wiljimen          #+#    #+#             */
-/*   Updated: 2023/12/05 18:24:34 by wiljimen         ###   ########.fr       */
+/*   Updated: 2023/12/10 12:01:13 by wiljimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_ptr_aux(unsigned long nptr)
 
 int	ft_put_ptr(int *ptr)
 {
-	int i;
+	int	i;
 
 	i = 2;
 	ft_putchar('0');
@@ -42,6 +42,7 @@ int	ft_put_ptr(int *ptr)
 	i += ft_ptr_aux((unsigned long)ptr);
 	return (i);
 }
+
 /*
 #include <stdio.h>
 
